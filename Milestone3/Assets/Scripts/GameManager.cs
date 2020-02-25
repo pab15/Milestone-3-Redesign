@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
     public GameObject CardPrefab;
 
     private PokerDeck _deck;
+    private PokerDeck _deck2;
 
     // Start is called before the first frame update
     void Start()
     {
         _deck = new PokerDeck();
+        _deck2 = new PokerDeck();
+        _deck.Merge(_deck2);
         Tuple<LinkedList<Card>, LinkedList<Card>> cutDeck = _deck.Cut();
         _deck.BottomCutToTop(cutDeck);
         _deck.Shuffle();

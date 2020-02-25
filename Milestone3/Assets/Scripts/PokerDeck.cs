@@ -9,12 +9,13 @@ public class PokerDeck : Deck
         var materials = PokerCardFactory.GetInstance().Materials;
         foreach (var material in materials)
         {
+            PokerCard new_card = new PokerCard();
+            new_card.Name = material.Key;
+            new_card.SetCardSuit();
+            new_card.SetCardValue();
             AddToTop(
-                new Card()
-                {
-                    Name = material.Key
-                }
-                );
+                        new_card
+                    ) ;
         }
     }
 }

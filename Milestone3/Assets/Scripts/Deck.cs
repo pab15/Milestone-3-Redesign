@@ -160,4 +160,14 @@ public class Deck
             Cards.AddLast(toPush);
         }
     }
+
+    public void Merge(Deck other)
+    {
+        while (other.Cards.Count > 0)
+        {
+            Card toPush = other.Cards.First();
+            other.Cards.RemoveFirst();
+            Cards.AddLast(toPush);
+        }
+    }
 }
