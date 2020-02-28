@@ -25,7 +25,7 @@ public static class Tuple
 }
 public class Deck 
 {
-    protected LinkedList<Card> Cards { get; set; }
+    public LinkedList<Card> Cards { get; set; }
 
     public Deck()
     {
